@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>form</title>
+    <style>
+        body{
+            background-image: url(public/1stpageimage/background3.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+           
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="border border-2 bg-light shadow " id="form" style="margin:10%; border-radius: 1.5rem; align-items: center;">
+        <div class="row">
+            <div class="col-6 m-5">
+        <form id="form" class="com  blur-container">
+            <div class="mb-4">
+                <h5><label for="exampleInputEmail1" class="form-label">Email address</label></h5>
+                <input type="email" class="form-control shadow-sm" id="email" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-4">
+                  <h5><label for="exampleInputPassword1" class="form-label">Password</label></h5>
+                <input type="password" class="form-control shadow-sm" id="password">
+            </div>
+            <div class="mb-4 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+           
+        </form>
+            </div>
+            <div class="col-4 m-5">
+                <img src="public/1stpageimage/loginpage.jpeg" alt="" style="height: 400px; width: 100%;">
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+
+    <Script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('form').addEventListener('submit', async function (e) {
+                e.preventDefault();
+
+
+                const email = document.getElementById("email").value;
+                const password = document.getElementById("password").value;
+
+
+                const login = {
+                    email: email,
+                    password: password
+                };
+
+                 console.log("Sending login:", login);
+                try {
+                    const response = await fetch('http://localhost:8081/form/login', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        credentials: 'include', // To send session cookies
+                        body: JSON.stringify(login)
+                    });
+                    const result = await response.text();
+                    alert(result);
+                    if (result === 'Login successfull') {
+                        window.location.href = '2ndpage'; // Redirect to login page if registration is successful
+                    }
+                }
+                catch {
+                    console.error('Registration error:', error);
+                    alert('Registration failed. Please try again.');
+                }
+            });
+        });
+    </Script>
+
+
+
+
+</body>
+
+</html>

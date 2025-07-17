@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="icon" type="image/svg+xml" href="public/logo.jpeg" />
+    <title>Cart Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #cart {
+            align-items: center;
+
+        }
+
+        #con {
+            background-color: #edfdff;
+
+        }
+
+        .footer {
+            background-color: #232f3e;
+            color: white;
+            padding: 40px 0;
+        }
+
+        .footer a {
+            color: #ddd;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer .footer-bottom {
+            border-top: 1px solid #3a4553;
+            padding-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="font-size:xx-large; font-weight: 100%;">
+                <i class="bi bi-cart4"></i>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link active" href="#">Sign in</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class=" dropdown-item " href="#">
+                                    today's deals
+                                </a></li>
+                            <li><a class="dropdown-item" href="#">Returns & orders</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Customer Services</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled active" href="#" tabindex="-1" aria-disabled="true"><i
+                                class="bi bi-geo-alt-fill"></i> Location</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid pb-5 bg-white" >
+        <div class="container ">
+            <h2 class="mb-4">Your Cart</h2>
+            <div id="cartItems" class="row">
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <footer class="footer pt-4">
+        <div class="container">
+            <div class="row text-center text-md-start">
+
+                <!-- Get to Know Us -->
+                <div class="col-md-3 mb-4">
+                    <h5>Get to Know Us</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About Amazon</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press Releases</a></li>
+                        <li><a href="#">Amazon Science</a></li>
+                    </ul>
+                </div>
+
+                <!-- Connect with Us -->
+                <div class="col-md-3 mb-4">
+                    <h5>Connect with Us</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+
+                <!-- Make Money with Us -->
+                <div class="col-md-3 mb-4">
+                    <h5>Make Money with Us</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Sell on Amazon</a></li>
+                        <li><a href="#">Sell under Amazon Accelerator</a></li>
+                        <li><a href="#">Protect and Build Your Brand</a></li>
+                        <li><a href="#">Amazon Global Selling</a></li>
+                        <li><a href="#">Supply to Amazon</a></li>
+                        <li><a href="#">Become an Affiliate</a></li>
+                        <li><a href="#">Fulfilment by Amazon</a></li>
+                        <li><a href="#">Advertise Your Products</a></li>
+                        <li><a href="#">Amazon Pay on Merchants</a></li>
+                    </ul>
+                </div>
+
+                <!-- Let Us Help You -->
+                <div class="col-md-3 mb-4">
+                    <h5>Let Us Help You</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Your Account</a></li>
+                        <li><a href="#">Returns Centre</a></li>
+                        <li><a href="#">Recalls and Product Safety Alerts</a></li>
+                        <li><a href="#">100% Purchase Protection</a></li>
+                        <li><a href="#">Amazon App Download</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom mt-4">
+                <a href="#" class="text-white">Back to top</a>
+
+
+
+            </div>
+        </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // Display cart items
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartContainer = document.getElementById('cartItems');
+
+        if (cart.length === 0) {
+            cartContainer.innerHTML = '<h5>Your cart is empty.</h5>';
+        } else {
+            cart.forEach((item, index) => {
+                cartContainer.innerHTML += `
+                    <div class="col-md-4 mb-3 ms-3">
+                        <div class="card row shadow" id="cart" >
+                           <div class=" col-8 ">
+                                <img src="${item.image}" class="card-img-top container-fluid" style=" overflow:hidden ; height: auto; width:100%;" alt="${item.name}">
+                            </div>
+                            <div class=" col-8 card-body">
+                                <h5 class="card-title">${item.name}</h5>
+                                <p class="card-text">quantity: ${item.quantity}</p>
+                                <button class="btn btn-danger btn-sm" onclick="removeFromCart(${index})">Remove</button>
+                                 <button class="btn btn-danger btn-sm" onclick="">Buy now</button>
+                                
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Remove item function
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            location.reload();
+        }
+
+        document.getElementById('addcart').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const customerName = document.getElementById('customerName').value;
+            const customerAddress = document.getElementById('customerAddress').value;
+            const customerMobile = document.getElementById('customerMobile').value;
+
+            const order = JSON.parse(localStorage.getItem('addcart')); // Ensure order is loaded
+
+            const addToCart = {
+                customerName,
+                customerAddress,
+                customerMobile,
+                cartItem:  cart
+            };
+
+            try {
+                const response = await fetch('http://localhost:8081/products/orders', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify(addcartdata)
+                });
+
+                if (response.ok) {
+                    const result = await response.text();
+                    alert(result);
+                    localStorage.removeItem('addcart');
+                    window.location.href = 'addcart.html';
+                } else {
+                    const errorMessage = await response.text();
+                    alert('Failed : ' + errorMessage);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error connecting to server.');
+            }
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>

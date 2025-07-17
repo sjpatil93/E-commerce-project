@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" type="image/svg+xml" href="public/logo.jpeg" />
+    <title>Add Products</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .register-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .register-container h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="register-container">
+        <h2>Add products</h2>
+        <form id="addproduct" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="name" class="form-label">name</label>
+        <input type="text" id="name" name="name" class="form-control" placeholder="Enter name" required />
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">description</label>
+        <input type="text" id="description" name="description" class="form-control" placeholder="description" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="price" class="form-label">price</label>
+        <input type="text" id="price" name="price" class="form-control" placeholder="Enter price" required />
+    </div>
+    <div class="mb-3">
+        <label for="image" class="form-label">image</label>
+        <input type="file" id="image" name="image" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label for="category" class="form-label">category</label>
+        <input type="text" id="category" name="category" class="form-control" placeholder="Enter category" required />
+    </div>
+
+    <button type="submit" class="btn btn-success w-100">Add</button>
+</form>
+
+        
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Registration Form JS -->
+    
+    
+    
+   <script>
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('addproduct').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const form = document.getElementById('addproduct');
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch('http://localhost:8081/saveproducts/add', {
+                    method: 'POST',
+                    body: formData,
+                    credentials: 'include' // To send session cookies
+                });
+
+                const result = await response.text();
+                alert(result);
+
+                if (result === 'Product added successfully!') {
+                    form.reset(); // Clear the form
+                     window.location.href = 'adminpage.html'; 
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Failed to add product.');
+            }
+        });
+    });
+</script>
+
+</script>
+
+</body>
+
+</html>

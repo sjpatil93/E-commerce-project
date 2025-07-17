@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="public/logo.jpeg" />
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E commerce</title>
+
+  <style>
+    .star {
+      color: gold;
+      font-size: 20px;
+    }
+
+    .image-wrapper {
+      background-color: red;
+      height: 100px;
+      width: 100px;
+    }
+
+    .image-wrapper img {
+
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+
+    }
+    .custom-card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.custom-card-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+  </style>
+</head>
+
+<body>
+  <!--navbar-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="font-size:xx-large; font-weight: 100%;">
+        <i class="bi bi-cart4"></i>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link  dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">Sign in</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class=" dropdown-item " href="registration.html">
+                  User sign in
+                </a></li>
+              <li><a class="dropdown-item" href="adminSignup.html">Admin sing in</a></li>
+
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              login
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class=" dropdown-item " href="login.html">
+                  User login
+                </a></li>
+              <li><a class="dropdown-item" href="adminlogin.html">Admin login</a></li>
+
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  active" href="#" tabindex="-1" aria-disabled="true" id="get-location"><i
+                class="bi bi-geo-alt-fill"></i>
+              <span id="location-text">Location</span></a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="orderstatusshowing.html">Your orders</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-primary" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!--hero section-->
+  <div class="container-fluid " id="app" style="background-color: #FFEDF3;">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="public/herosection.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="public/herosec2.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="public/herpsec3.webp" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+
+
+
+  <!--shopping section1-->
+  <div class="container-fluid p-5 bg-light">
+
+    <div class="row p-4 justify-content-evenly  bg-light"
+      style="border-radius: 1.5rem;  height:auto;">
+
+
+      <h3>Best of electronics</h3>
+      <!--col-1-->
+      <div class="col-3 text-center ">
+        <div class="card shadow-sm custom-card-hover" style="width: 20rem;">
+          <div class="img-wrapper">
+            <img src="public/onepluse.webp" class="" alt="...">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Earbuds</h5>
+            <p class="card-text">starts from ₹999</p>
+            <a href="index1.html" class="btn btn-primary">See more</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 text-center">
+        <div class="card shadow-sm custom-card-hover " style="width: 20rem;">
+          <div class="img-wrapper">
+            <img src="public/sony.webp" class="" alt="...">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">bluetooth speakers</h5>
+            <p class="card-text">start from ₹599</p>
+            <a href="#" class="btn btn-primary">See more</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 text-center">
+        <div class="card shadow-sm custom-card-hover" style="width: 20rem;">
+          <div class="img-wrapper">
+            <img src="public/s.webp" class="" alt="...">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">bluetooth speakers</h5>
+            <p class="card-text">start from ₹499</p>
+            <a href="#" class="btn btn-primary">See more</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 text-center">
+        <div class="card shadow-sm custom-card-hover" style="width: 20rem;">
+          <div class="img-wrapper">
+            <img src="public/sofa.webp" class="" alt="...">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">bluetooth speakers</h5>
+            <p class="card-text">start from ₹799</p>
+            <a href="#" class="btn btn-primary">See more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    </div>
+    <!--section2-->
+ <div class="container-fluid p-5 bg-light">
+
+    <div class="row p-4 justify-content-evenly bg-light"
+      style="border-radius: 1.5rem; height:auto;">
+
+
+      <h3>Best of electronics</h3>
+      <!--col-1-->
+      <div class="col-3 text-center">
+        <div class="card shadow-sm custom-card-hover" style="width: 20rem;">
+          <div class="img-wrapper">
+            <img src="public/tvunits.webp" class="" alt="...">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">See more</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 text-center">
+        <div class="card shadow-sm custom-card-hover" style="width: 20rem;">
+          <div class="img-wrapper">
+            <img src="public/sofa.webp" class="" alt="...">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">See more</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 text-center">
+        <div class="card shadow-sm custom-card-hover" style="width: 20rem;">
+          <div class="img-wrapper">
+            <img src="public/pencil.webp" class="" alt="...">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">See more</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 text-center">
+        <div class="card shadow-sm custom-card-hover" style="width: 20rem;">
+          <div class="img-wrapper">
+            <img src="public/officestudychair.webp" class="" alt="...">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">See more</a>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+ </div>
+    <!--section3-->
+
+     <div class="container-fluid p-5 bg-light">
+
+    <div class="row p-4 justify-content-evenly bg-light"
+      style="border-radius: 1.5rem;  height:auto;">
+
+
+      <h3>Best of electronics</h3>
+      <!--col-1-->
+      <div class="col-3 text-center">
+        <div class="card shadow-sm custom-card-hover" style="width: 20rem;">
+          <div class="img-wrapper">
+            <img src="public/coffee.webp" class="" alt="...">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">See more</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 text-center">
+        <div class="card shadow-sm custom-card-hover" style="width: 20rem;">
+          <div class="img-wrapper">
+            <img src="public/coffee.webp" class="" alt="...">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">See more</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 text-center">
+        <div class="card shadow-sm custom-card-hover" style="width: 20rem;">
+          <div class="img-wrapper">
+            <img src="public/coffee.webp" class="" alt="...">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">See more</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 text-center">
+        <div class="card shadow-sm custom-card-hover" style="width: 20rem;">
+          <div class="img-wrapper">
+            <img src="public/sofa.webp" class="" alt="...">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">See more</a>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+ 
+     </div>
+  <!--footer-->
+
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Style Footer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .footer {
+        background-color: #232f3e;
+        color: white;
+        padding: 40px 0;
+      }
+
+      .footer a {
+        color: #ddd;
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        text-decoration: underline;
+      }
+
+      .footer .footer-bottom {
+        border-top: 1px solid #3a4553;
+        padding-top: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container" style="background-color: #3a4553;">
+        <div class="row text-center text-md-start">
+
+          <!-- Get to Know Us -->
+          <div class="col-md-3 mb-4">
+            <h5>Get to Know Us</h5>
+            <ul class="list-unstyled">
+              <li><a href="#">About </a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press Releases</a></li>
+              <li><a href="#"> Science</a></li>
+            </ul>
+          </div>
+
+          <!-- Connect with Us -->
+          <div class="col-md-3 mb-4">
+            <h5>Connect with Us</h5>
+            <ul class="list-unstyled">
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Instagram</a></li>
+            </ul>
+          </div>
+
+          <!-- Make Money with Us -->
+          <div class="col-md-3 mb-4">
+            <h5>Make Money with Us</h5>
+            <ul class="list-unstyled">
+              <li><a href="#">Sell </a></li>
+
+              <li><a href="#">Protect and Build Your Brand</a></li>
+              <li><a href="#">Global Selling</a></li>
+              <li><a href="#">Supply to Amazon</a></li>
+              <li><a href="#">Become an Affiliate</a></li>
+              <li><a href="#">Fulfilment by Amazon</a></li>
+              <li><a href="#">Advertise Your Products</a></li>
+              <li><a href="#"> Pay on Merchants</a></li>
+            </ul>
+          </div>
+
+          <!-- Let Us Help You -->
+          <div class="col-md-3 mb-4">
+            <h5>Let Us Help You</h5>
+            <ul class="list-unstyled">
+              <li><a href="#">Your Account</a></li>
+              <li><a href="#">Returns Centre</a></li>
+              <li><a href="#">Recalls and Product Safety Alerts</a></li>
+              <li><a href="#">100% Purchase Protection</a></li>
+              <li><a href="#"> App Download</a></li>
+              <li><a href="#">Help</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom mt-4">
+          <a href="#" class="text-white">Back to top</a>
+
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>
+
+
+<script>
+  /* const link = document.getElementById('get-location');
+   const locationText=document.getElementById('location-text');
+ 
+ // Function to get weather data from API
+ async function getdata(lat, long) {
+     // Sample weather API (You must replace 'YOUR_API_KEY' with your actual API key)
+     const apiUrl = `http://api.weatherapi.com/v1/current.json?key=YOUR_API_KEY&q=${lat},${long}`;
+ 
+     const promise = await fetch(apiUrl);
+     return await promise.json();
+ }
+ 
+ // Function to handle successful location fetch
+ /*async function gotlocation(position) {
+   try{
+     const result = await getdata(
+         position.coords.latitude,
+         position.coords.longitude
+     );
+     console.log(result); // This will log the weather data
+     locationText.textContent=result.location.name;
+ }
+ catch(error){
+   console.error("Error fetching data: ",error);
+   locationText.textContent="Error fetching location";
+ }}
+ 
+ // Function to handle failure in getting location
+ function failedToGet() {
+     console.log("There was some issue in getting location");
+     locationText.textContent="Location unavailable";
+ }
+ 
+ // On click, trigger geolocation
+ link.addEventListener('click', () => {
+     navigator.geolocation.getCurrentPosition(gotlocation, failedToGet);
+ });
+ 
+ const link = document.getElementById('get-location');
+ const locationText = document.getElementById('location-text');
+ 
+ async function getCityName(lat, long) {
+     const apiKey = 'YOUR_API_KEY'; // Replace this
+     const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${lat},${long}`;
+ 
+     const response = await fetch(apiUrl);
+     const data = await response.json();
+     return data.location.name;
+ }
+ 
+ async function gotLocation(position) {
+     try {
+         const cityName = await getCityName(position.coords.latitude, position.coords.longitude);
+         locationText.textContent = cityName;
+     } catch (error) {
+         console.error(error);
+         locationText.textContent = "Error fetching location";
+     }
+ }
+ 
+ function failedToGet() {
+     console.log("There was some issue in getting location");
+     locationText.textContent = "Location unavailable";
+ }
+ 
+ link.addEventListener('click', () => {
+     navigator.geolocation.getCurrentPosition(gotLocation, failedToGet);
+ });const link = document.getElementById('get-location');
+ const locationText = document.getElementById('location-text');
+ 
+ // Function to handle successful location fetch
+ function gotLocation(position) {
+     const latitude = position.coords.latitude.toFixed(2);
+     const longitude = position.coords.longitude.toFixed(2);
+ 
+     // Display the user's location in the link
+     locationText.textContent = `Lat: ${latitude}, Lon: ${longitude}`;
+     console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+ }
+ 
+ // Function to handle errors
+ function failedToGet(error) {
+     console.log("There was an issue getting location", error);
+     locationText.textContent = "Location unavailable";
+ }
+ 
+ // Click event to get location
+ link.addEventListener('click', () => {
+     if (navigator.geolocation) {
+         navigator.geolocation.getCurrentPosition(gotLocation, failedToGet);
+     } else {
+         console.log("Geolocation is not supported by this browser.");
+         locationText.textContent = "Geolocation not supported";
+     }
+ });*/
+  // Select the link and location text span
+  const link = document.getElementById('get-location');
+  const locationText = document.getElementById('location-text');
+
+  // Function to handle successful location fetch
+  async function gotLocation(position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+
+    try {
+      // Reverse geocoding using OpenStreetMap (no API key required)
+      const apiUrl = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`;
+
+      const response = await fetch(apiUrl);
+      const data = await response.json();
+
+      if (data && data.address) {
+        // Get city/town/village or fallback to state/country
+        const city = data.address.city || data.address.town || data.address.village || data.address.state;
+        const country = data.address.country;
+
+        locationText.textContent = `${city}, ${country}`;
+      } else {
+        locationText.textContent = "Location not found";
+      }
+
+    } catch (error) {
+      console.error('Error fetching location:', error);
+      locationText.textContent = "Error fetching location";
+    }
+  }
+
+  // Function to handle failure in getting location
+  function failedToGet() {
+    console.log("There was an issue getting location");
+    locationText.textContent = "Location unavailable";
+  }
+
+  // Add click event to trigger geolocation
+  link.addEventListener('click', () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(gotLocation, failedToGet);
+    } else {
+      console.log("Geolocation is not supported by this browser.");
+      locationText.textContent = "Geolocation not supported";
+    }
+  });
+
+
+
+
+
+
+</script>
+
+
+<script type="module" src="/src/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</body>
+
+</html>
